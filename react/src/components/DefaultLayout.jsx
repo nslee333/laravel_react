@@ -1,7 +1,9 @@
-export default function GuestLayout(){
+import { Outlet } from "react-router-dom";
+
+export default function DefaultLayout(){
   return (
-    <>
-      GuestLayout
-    </>
+    <div>
+      <Outlet />
+    </div>
   )
 }
