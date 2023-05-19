@@ -13,7 +13,7 @@ export default function Users() {
   const getUsers = () => {
     setLoading(true);
 
-    axiosClient.get('/users')
+    axiosClient.get(`${import.meta.env.VITE_API_BASE_URL}/api/users`)
       .then(({data}) => {
         setLoading(false);
         console.log(data);
