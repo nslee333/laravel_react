@@ -10,8 +10,10 @@ export default function GuestLayout(){
   }
 
   return (
-    <div>
-      <Outlet />
+    <div className="login-signup-form">
+      <div className="form">
+        <Outlet />
+      </div>
     </div>
   )
 }
