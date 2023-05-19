@@ -12,6 +12,12 @@ export default function DefaultLayout(){
 
   const onLogout = (e) => {
     e.preventDefault();
+
+    axiosClient.post(`${import.meta.env.VITE_API_BASE_URL}/api/logout`)
+      .then(() => {
+        setUser({});
+        setToken(null);
+      });
   }
 
   useEffect(() => {
