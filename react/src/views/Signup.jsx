@@ -15,7 +15,6 @@ export default function Signup() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // debugger;
     
     const payload = {
       name: nameRef.current.value,
@@ -24,25 +23,19 @@ export default function Signup() {
       password_confirmation: passwordConfirmationRef.current.value
     }
 
-    try {
-      const res = axiosClient.post('/signup', payload)
-      console.log()
-      
-    } catch (error) {
-      console.log(error)
-    }
-      // .then(({data}) => {
-      //   setUser(data.user);
-      //   setToken(data.token);
-      // })
-      // .catch(err => {
-      //   console.log(err);
-      //   const response = err.response;
+     axiosClient.post(`${import.meta.env.VITE_API_BASE_URL}/api/signup`, payload)
+      .then(({data}) => {
+        setUser(data.user);
+        setToken(data.token);
+      })
+      .catch(err => {
+        const response = err.response;
 
-      //   if (response && response.status === 422) {
-      //     console.log(response.data.errors);
-      //   }
-      // })
+        if (response && response.status === 422) {
+          console.log(response.data.errors);
+        }
+      })
+
   }
 
 
