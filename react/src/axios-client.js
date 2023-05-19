@@ -28,7 +28,6 @@ axiosClient.interceptors.response.use((response) => {
     }
     
   } catch (error) {
-    debugger;
     console.error(error);
   }
 
