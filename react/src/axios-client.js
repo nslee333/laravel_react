@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosClient = axios.create({
-  baseUrl: `${import.meta.env.VITE_APP_BASE_URL}/api`
+  baseUrl: `${import.meta.env.VITE_API_BASE_URL}/api`
 });
 
 axiosClient.interceptors.request.use((config) => {
@@ -15,7 +15,7 @@ axiosClient.interceptors.request.use((config) => {
 });
 
 
-axiosClient().interceptors.response.use((response) => {
+axiosClient.interceptors.response.use((response) => {
   return response;
 }, (error) => {
 
