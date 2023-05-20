@@ -1,1 +1,1 @@
-A Laravel / Inertia tutorial project - used to get familiar with Laravel / PHP / Inertia.
+A Laravel and React with Vite tutorial project - used to get familiar with Laravel / PHP / Inertia.
